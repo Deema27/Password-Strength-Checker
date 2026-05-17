@@ -8,6 +8,7 @@ white = (255, 255, 255)
 red = (255, 0, 0)
 pink = (255, 182, 193)
 dark_pink = (255, 105, 180)
+green = (0, 255, 0)
 
 
 # Window settings
@@ -39,8 +40,14 @@ pwd_input = pygwidgets.InputText(window, (200, 175), focusColor=red, textColor=d
 # Button to submit password
 enter_button = pygwidgets.TextButton(window, (450, 220), 'Enter')
 
-# List to hold feedback messages (rules violated and strength)
+# Stores feedback messages for password rule violations
 feedback = []
+
+# Stores the strength label returned by the strength() method
+strength = ""
+
+# Stores the display color corresponding to the strength level
+color = ""
 
 
 
@@ -68,7 +75,7 @@ while True:
 
             # Get rule violations and strength
             feedback = pwd_instance.validate()
-            feedback.append(pwd_instance.strength())
+            strength = pwd_instance.strength()
 
 
     # Draw everything on screen
@@ -83,11 +90,27 @@ while True:
     # Draw feedback messages dynamically
     y = 260  # Starting y-position
     for line in feedback:
+
         text = pygwidgets.DisplayText(window, (55, y), line, fontSize=20, textColor=red)
         text.draw()
         y += 30  # Move down for the next message
+    
+    if strength:
+
+        if strength == "Password is very strong!":
+            color = green
+        
+        elif strength == "Password is moderate.":
+            color = white
+        
+        elif strength == "Password is too weak!":
+            color = red
+            
+        text = pygwidgets.DisplayText(window, (55, y), strength, fontSize=20, textColor=color)
+        text.draw()
 
     # Update the display
     pygame.display.update()
     # Limit the loop speed
     clock.tick(frames_per_second)
+
