@@ -93,7 +93,7 @@ class PasswordChecker:
         
         # Each rule adds 1 to the score if satisfied
         score = sum([
-            self.__length >= 15,
+            self.__length >= 10,
             self.__lower_count >= 1,
             self.__upper_count >= 1,
             self.__num_count >= 1,
