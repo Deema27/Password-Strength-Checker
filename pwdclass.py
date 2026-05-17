@@ -53,7 +53,7 @@ class PasswordChecker:
         
         """
         Validate the password according to rules:
-        - Minimum 15 characters
+        - Minimum 10 characters
         - At least one lowercase letter
         - At least one uppercase letter
         - At least one number
@@ -64,8 +64,8 @@ class PasswordChecker:
         
         messages = []
 
-        if self.__length < 15:
-            messages.append("Password requires at least 15 characters.")
+        if self.__length < 10:
+            messages.append("Password requires at least 10 characters.")
             
         if self.__lower_count < 1:
             messages.append("Password requires at least one lowercase letter.")
