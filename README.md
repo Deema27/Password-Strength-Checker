@@ -8,7 +8,7 @@ This application allows users to enter a password, validates it against standard
 ## Features
 
 - **Password Validation Rules**
-  - Minimum 15 characters
+  - Minimum 10 characters
   - At least one lowercase letter
   - At least one uppercase letter
   - At least one number
