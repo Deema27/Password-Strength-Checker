@@ -97,7 +97,7 @@ while True:
     
     if strength:
 
-        if strength == "Password is very strong!":
+        if strength == "Password is strong!":
             color = green
         
         elif strength == "Password is moderate.":
