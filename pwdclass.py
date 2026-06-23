@@ -102,7 +102,7 @@ class PasswordChecker:
 
         # Determine password strength
         if score == 5:
-            return "Password is very strong!"
+            return "Password is strong!"
         elif score >= 3:
             return "Password is moderate."
         else:
