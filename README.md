@@ -16,7 +16,7 @@ This application allows users to enter a password, validates it against standard
   - No whitespace characters
 
 - **Password Strength Assessment**
-  - Very strong: meets all criteria
+  - Strong: meets all criteria
   - Moderate: meets most criteria
   - Weak: fails multiple criteria
 
@@ -39,3 +39,5 @@ This application allows users to enter a password, validates it against standard
    ```bash
    git clone https://github.com/Deema27/Password-Strength-Checker.git
    cd Password-Strength-Checker
+   pip install pygame pygwidgets
+   python passwordchecker.py
